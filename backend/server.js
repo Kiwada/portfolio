@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
-const https = require('https');
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
@@ -9,14 +8,36 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const GITHUB_USERNAME = process.env.GITHUB_USERNAME || 'Kiwada';
 const CONTACT_TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'kaiocfontenele@gmail.com';
-
-const httpsAgent = new https.Agent({  
-  rejectUnauthorized: false
-});
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN || '';
+const CORS_ORIGIN = process.env.CORS_ORIGIN || '';
+const allowedOrigins = CORS_ORIGIN.split(',')
+  .map((origin) => origin.trim())
+  .filter(Boolean);
+const githubHeaders = {
+  Accept: 'application/vnd.github+json',
+  'User-Agent': 'portfolio-backend',
+  ...(GITHUB_TOKEN ? { Authorization: `Bearer ${GITHUB_TOKEN}` } : {})
+};
 
 // Middleware
-app.use(cors());
-app.use(express.json());
+app.use(
+  cors({
+    origin(origin, callback) {
+      if (!origin || allowedOrigins.length === 0 || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error('Origin not allowed by CORS'));
+    },
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type']
+  })
+);
+app.use(express.json({ limit: '1mb' }));
+
+app.get('/api/health', (_req, res) => {
+  res.json({ ok: true, service: 'portfolio-backend' });
+});
 
 // GitHub API Route
 app.get('/api/github/repos', async (req, res) => {
@@ -26,7 +47,7 @@ app.get('/api/github/repos', async (req, res) => {
         sort: 'updated',
         per_page: 6
       },
-      httpsAgent
+      headers: githubHeaders
     });
     
     const repos = response.data.map(repo => ({
@@ -52,7 +73,7 @@ app.get('/api/github/repos', async (req, res) => {
 app.get('/api/github/stats', async (req, res) => {
   try {
     const response = await axios.get(`https://api.github.com/users/${GITHUB_USERNAME}`, {
-      httpsAgent
+      headers: githubHeaders
     });
     
     const stats = {
@@ -76,15 +97,16 @@ app.get('/api/github/stats', async (req, res) => {
 app.post('/api/contact', async (req, res) => {
   try {
     const { name, email, message } = req.body;
+
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      return res.status(503).json({ error: 'Email service is not configured' });
+    }
     
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
-      },
-      tls: {
-        rejectUnauthorized: false
       }
     });
 
