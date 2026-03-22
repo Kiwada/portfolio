@@ -35,7 +35,6 @@
   background: var(--card-background);
   border-radius: 20px;
   padding: 40px 30px;
-  text-decoration: none;
   color: var(--text-color);
   border: 2px solid var(--border-color);
   transition: all 0.3s ease;
@@ -52,6 +51,16 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
+.resume-card-disabled {
+  cursor: not-allowed;
+  opacity: 0.78;
+}
+
+.resume-card-disabled:hover {
+  border-color: var(--border-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
 .resume-icon {
   width: 120px;
   height: 120px;
@@ -66,6 +75,10 @@
 
 .resume-card:hover .resume-icon {
   transform: rotate(10deg) scale(1.1);
+}
+
+.resume-card-disabled:hover .resume-icon {
+  transform: none;
 }
 
 .resume-info {
@@ -110,6 +123,17 @@
   transform: scale(1.05);
 }
 
+.resume-download-disabled {
+  color: var(--text-secondary);
+  background: rgba(148, 163, 184, 0.14);
+}
+
+.resume-card-disabled:hover .resume-download {
+  background: rgba(148, 163, 184, 0.14);
+  color: var(--text-secondary);
+  transform: none;
+}
+
 /* Dark mode */
 [data-theme='dark'] .resume-card {
   background: rgba(255, 255, 255, 0.05);
@@ -118,6 +142,10 @@
 
 [data-theme='dark'] .resume-card:hover {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme='dark'] .resume-card-disabled:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 /* Responsive */

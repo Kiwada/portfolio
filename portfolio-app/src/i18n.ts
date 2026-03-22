@@ -46,8 +46,16 @@ const resources = {
         title: 'Professional Experience',
         experiences: [
           {
+            company: 'Workana',
+            role: 'Freelance DevOps Engineer',
+            period: ' Jan 2023 - Present',
+            description:
+              'Delivered freelance DevOps services for client projects, configuring containerized environments, deployment flows, cloud infrastructure, and operational routines focused on reliability and maintainability. Worked on application publishing, environment setup, automation pipelines, and infrastructure organization for faster and safer delivery cycles.',
+            technologies: ['Docker', 'Coolify', 'AWS', 'GitHub Actions', 'Supabase', 'n8n']
+          },
+          {
             company: 'Centro Educacional Contexto',
-            role: 'Software Engineer',
+            role: 'IT professional',
             period: 'Jan 2026 - Present',
             description:
               'Worked on the development and evolution of technology solutions focused on process automation, systems integration, and operational efficiency. Contributed to application development, API integrations, and implementation of solutions designed for performance, scalability, and measurable business value.',
@@ -87,8 +95,9 @@ const resources = {
       },
       resume: {
         title: 'Resume',
-        subtitle: 'Portuguese version available for download.',
+        subtitle: 'The download is temporarily disabled while the documents are being updated.',
         download: 'Download PDF',
+        disabled: 'Download unavailable',
         portuguese: 'Portuguese Version'
       },
       contact: {
@@ -152,17 +161,25 @@ const resources = {
         title: 'Experiência Profissional',
         experiences: [
           {
-            company: 'Centro Educacional Contexto',
-            role: 'Engenheiro de Software',
-            period: '01/2026 - Atual',
+            company: 'Workana',
+            role: 'Engenheiro DevOps Freelancer',
+            period: 'Jan 2023 - Atual',
             description:
-              'Atuação no desenvolvimento e evolução de soluções tecnológicas, com foco em automação de processos, integração de sistemas e melhoria da eficiência operacional. Participação na construção de aplicações, integração com APIs e implementação de soluções orientadas a desempenho, escalabilidade e geração de valor para o negócio.',
+              'Prestação de serviços freelance de DevOps para projetos de clientes, com configuração de ambientes conteinerizados, fluxos de deploy, infraestrutura em nuvem e rotinas operacionais voltadas à confiabilidade e à manutenção. Atuação na publicação de aplicações, configuração de ambientes, pipelines de automação e organização da infraestrutura para ciclos de entrega mais rápidos e seguros.',
+            technologies: ['Docker', 'Coolify', 'AWS', 'GitHub Actions', 'Supabase', 'n8n']
+          },
+          {
+            company: 'Centro Educacional Contexto',
+            role: 'Profissional de TI',
+            period: 'Jan 2026 - Atual',
+            description:
+              'Atuação no desenvolvimento e evolução de soluções tecnológicas, com foco em automação de processos, integração de sistemas e eficiência operacional. Participação na construção de aplicações, integrações com APIs e implementação de soluções orientadas a desempenho, escalabilidade e geração de valor para o negócio.',
             technologies: ['React', 'Node.js', 'TypeScript', 'Python', 'APIs', 'Automação', 'Cloud']
           },
           {
             company: 'Centro Educacional Contexto',
             role: 'Estagiário',
-            period: '03/2024 - 12/2025',
+            period: 'Mar 2024 - Dez 2025',
             description:
               'Atuação com suporte e help desk, auxiliando usuários nas rotinas do dia a dia, resolvendo demandas e melhorando a experiência com ferramentas e serviços internos. Também houve participação em atividades de UI/UX design, com foco em usabilidade, clareza e interações mais intuitivas.',
             technologies: ['Help Desk', 'Suporte ao Usuário', 'UI/UX Design', 'Atendimento', 'Resolução de Problemas']
@@ -193,8 +210,9 @@ const resources = {
       },
       resume: {
         title: 'Currículo',
-        subtitle: 'Versão em português disponível para download.',
+        subtitle: 'O download está temporariamente desativado enquanto os documentos são atualizados.',
         download: 'Baixar PDF',
+        disabled: 'Download indisponível',
         portuguese: 'Versão em Português'
       },
       contact: {

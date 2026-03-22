@@ -52,7 +52,7 @@ const Education: React.FC = () => {
     },
     {
       title: t('education.degrees.techDegree.title'),
-      institution: 'IFMA - Bacabal',
+      institution: 'IFMA - São Luiz',
       period: '2019 - 2021',
       description: t('education.degrees.techDegree.description')
     },
@@ -67,8 +67,8 @@ const Education: React.FC = () => {
   const certificates: Certificate[] = [
     {
       title: {
-        pt: 'React com TypeScript',
-        en: 'React with TypeScript'
+        pt: 'REACT: DEVELOP TYPED AND SCALABLE WITH TYPESCRIPT',
+        en: 'REACT: DEVELOP TYPED AND SCALABLE WITH TYPESCRIPT'
       },
       description: {
         pt: 'Formação orientada ao desenvolvimento de interfaces tipadas, componentização escalável e organização de aplicações React com TypeScript.',
@@ -143,8 +143,27 @@ const Education: React.FC = () => {
     },
     {
       title: {
-        pt: 'Certificados Complementares',
-        en: 'Complementary Certificates'
+        pt: 'Design Visual na Prática',
+        en: 'Visual Design in Practice'
+      },
+      description: {
+        pt: 'Formação voltada a fundamentos de UI/UX, hierarquia visual, composição de interfaces e decisões de design orientadas à clareza, consistência e usabilidade.',
+        en: 'Training focused on UI/UX fundamentals, visual hierarchy, interface composition, and design decisions guided by clarity, consistency, and usability.'
+      },
+      issuer: 'Alura',
+      year: '2025',
+      duration: {
+        pt: 'Trilha de design',
+        en: 'Design track'
+      },
+      badge: 'UX',
+      gradient: 'linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)',
+      file: '/certificates/alura-visual-design-in-practice.pdf'
+    },
+    {
+      title: {
+        pt: 'Python Análise de Dados',
+        en: 'Python & Data Analysis'
       },
       description: {
         pt: 'Conjunto adicional de registros de formação usados para complementar a trilha de aprendizado em desenvolvimento de software.',
@@ -156,7 +175,7 @@ const Education: React.FC = () => {
         pt: 'Trilha complementar',
         en: 'Complementary track'
       },
-      badge: 'CC',
+      badge: 'Py',
       gradient: 'linear-gradient(135deg, #7c3aed 0%, #ec4899 100%)',
       file: '/certificates/certificados-complementares.pdf'
     }
@@ -186,14 +205,14 @@ const Education: React.FC = () => {
               viewport={{ once: true }}
             >
               {degree.image && (
-                <a 
-                  href={degree.diplomaUrl} 
-                  target="_blank" 
+                <a
+                  href={degree.diplomaUrl}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="degree-image-container"
                 >
-                  <img 
-                    src={degree.image} 
+                  <img
+                    src={degree.image}
                     alt={`Diploma - ${degree.title}`}
                     className="degree-image"
                     onError={(e) => {
@@ -203,13 +222,13 @@ const Education: React.FC = () => {
                   />
                 </a>
               )}
-              
+
               <div className="degree-content">
                 <div className="degree-header">
                   <FaUserGraduate className="degree-icon" />
                   <h3 className="degree-title">{degree.title}</h3>
                 </div>
-                
+
                 <div className="degree-info">
                   <div className="info-item">
                     <FaUniversity className="info-icon" />
@@ -220,7 +239,7 @@ const Education: React.FC = () => {
                     <span>{degree.period}</span>
                   </div>
                 </div>
-                
+
                 <p className="degree-description">{degree.description}</p>
               </div>
             </motion.div>

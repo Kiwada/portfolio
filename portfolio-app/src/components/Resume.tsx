@@ -11,8 +11,8 @@ const Resume: React.FC = () => {
     {
       language: 'Português',
       flag: '🇧🇷',
-      file: '/resumes/curriculo-pt.pdf',
-      translationKey: 'portuguese'
+      translationKey: 'portuguese',
+      available: false
     }
   ];
 
@@ -41,32 +41,35 @@ const Resume: React.FC = () => {
 
         <div className="resume-grid">
           {resumes.map((resume, index) => (
-            <motion.a
+            <motion.div
               key={index}
-              href={resume.file}
-              download
-              className="resume-card"
+              className={`resume-card ${resume.available ? '' : 'resume-card-disabled'}`.trim()}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05, y: -10 }}
+              whileHover={resume.available ? { scale: 1.05, y: -10 } : undefined}
+              aria-disabled={!resume.available}
             >
               <div className="resume-icon">
                 <FaFileAlt size={60} />
               </div>
-              
+
               <div className="resume-info">
                 <span className="resume-flag">{resume.flag}</span>
                 <h3 className="resume-language">{resume.language}</h3>
                 <p className="resume-label">{t(`resume.${resume.translationKey}`)}</p>
               </div>
 
-              <div className="resume-download">
+              <div
+                className={`resume-download ${
+                  resume.available ? '' : 'resume-download-disabled'
+                }`.trim()}
+              >
                 <FaDownload size={24} />
-                <span>{t('resume.download')}</span>
+                <span>{resume.available ? t('resume.download') : t('resume.disabled')}</span>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </div>
       </div>
