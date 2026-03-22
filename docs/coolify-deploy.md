@@ -11,7 +11,7 @@ Este projeto foi preparado para deploy na Coolify com 2 recursos separados:
 - Fonte: repositório Git `Kiwada/portfolio`
 - Build Pack: `Dockerfile`
 - Base Directory: `backend`
-- Dockerfile Location: `backend/Dockerfile`
+- Dockerfile Location: `Dockerfile`
 - Porta exposta: `5000`
 - Domínio: `https://api.kaiofontenele.pro`
 - Health Check Path: `/api/health`
@@ -32,7 +32,7 @@ Este projeto foi preparado para deploy na Coolify com 2 recursos separados:
 - Fonte: repositório Git `Kiwada/portfolio`
 - Build Pack: `Dockerfile`
 - Base Directory: `portfolio-app`
-- Dockerfile Location: `portfolio-app/Dockerfile`
+- Dockerfile Location: `Dockerfile`
 - Porta exposta: `80`
 - Domínios:
   - `https://kaiofontenele.pro`
