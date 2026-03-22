@@ -65,6 +65,11 @@ const resources = {
       },
       education: {
         title: 'Education & Certifications',
+        certificates: {
+          title: 'Course Certificates',
+          subtitle: 'Selected training records and complementary certifications.',
+          view: 'View Certificate'
+        },
         degrees: {
           computerScience: {
             title: 'Bachelor of Computer Science',
@@ -166,6 +171,11 @@ const resources = {
       },
       education: {
         title: 'Educação & Certificações',
+        certificates: {
+          title: 'Certificados de Cursos',
+          subtitle: 'Registros selecionados de formação e certificações complementares.',
+          view: 'Ver Certificado'
+        },
         degrees: {
           computerScience: {
             title: 'Bacharelado em Ciência da Computação',

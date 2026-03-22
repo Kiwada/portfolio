@@ -1,47 +1,127 @@
-# 🚀 Guilherme Mendes Portfolio
+# Kaio Fontenele Portfolio
 
-Professional portfolio built with React, TypeScript, and Node.js, showcasing projects, skills, and experiences of a Full Stack Developer.
+Professional portfolio application designed to present projects, skills, experience, education, certifications, and contact channels through a single public-facing website.
 
-## ✨ Features
+## Overview
 
-- 🌓 **Dark/Light Mode**: Toggle between light and dark themes
-- 🌍 **Internationalization**: Support for Portuguese and English
-- 📱 **Responsive**: Adaptive design for all devices
-- ⚡ **Performance**: Optimized with lazy loading and code splitting
-- 🎨 **Animations**: Smooth transitions with Framer Motion
-- 🔗 **GitHub Integration**: Automatic repository display
-- 📧 **Contact Form**: Message sending system
+This repository is structured as a compact monorepo composed of:
 
-## 🛠️ Technologies
+- a React + TypeScript frontend for the public portfolio
+- an Express backend for contact handling and GitHub-related endpoints
+- static assets for resume, diplomas, and course certificates
+- Dockerfiles prepared for deployment on self-hosted Coolify
+
+## Features
+
+- Bilingual interface with Portuguese and English content
+- Light and dark theme switching
+- Responsive one-page portfolio layout
+- Curated featured projects section
+- Professional experience timeline
+- Education and certifications section with downloadable course certificates
+- Resume download section
+- Contact form backed by Express + Nodemailer
+- GitHub API integration for reusable portfolio endpoints
+- Framer Motion animations for section transitions and cards
+- Docker-based deployment flow for self-hosted Coolify
+
+## Architecture
 
 ### Frontend
-- React 18 with TypeScript
-- Framer Motion (animations)
-- i18next (internationalization)
-- Axios (HTTP requests)
-- React Icons
+
+The frontend lives in `portfolio-app/` and is responsible for:
+
+- rendering the one-page portfolio experience
+- handling language switching with `i18next`
+- managing theme state with React Context
+- exposing certificates, resume, and featured project assets
+- calling the backend contact API through `REACT_APP_API_URL`
+
+Main sections rendered in the app:
+
+- Hero
+- About
+- Skills
+- Projects
+- Experience
+- Education & Certifications
+- Resume
+- Contact
 
 ### Backend
-- Node.js with Express
-- CORS for cross-origin
-- GitHub API integration
-- Nodemon for development
 
-## 📦 Installation
+The backend lives in `backend/` and exposes a lightweight API used by the site:
 
-### Prerequisites
-- Node.js 14 or higher
-- npm or yarn
+- `GET /api/health`
+- `GET /api/github/repos`
+- `GET /api/github/stats`
+- `POST /api/contact`
+
+Primary responsibilities:
+
+- contact message delivery through SMTP
+- GitHub profile and repository data retrieval
+- CORS protection for the public frontend domain
+- healthcheck support for production environments
+
+## Project Structure
+
+```text
+portfolio/
+├── backend/
+│   ├── Dockerfile
+│   ├── server.js
+│   ├── package.json
+│   └── .env.example
+├── portfolio-app/
+│   ├── Dockerfile
+│   ├── nginx.conf
+│   ├── public/
+│   │   ├── certificates/
+│   │   ├── diplomas/
+│   │   └── resumes/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── contexts/
+│   │   ├── data/
+│   │   ├── i18n.ts
+│   │   └── App.tsx
+│   └── .env.example
+└── README.md
+```
+
+## Technologies
 
 ### Frontend
 
-```bash
-cd portfolio-app
-npm install
-npm start
-```
+- React
+- TypeScript
+- Framer Motion
+- i18next
+- Axios
+- React Icons
+- CSS modules / custom CSS
 
-Frontend will be available at `http://localhost:3000`
+### Backend
+
+- Node.js
+- Express
+- Nodemailer
+- Axios
+- CORS
+
+### Infrastructure
+
+- Docker
+- Nginx
+- Coolify
+
+## Local Development
+
+### Prerequisites
+
+- Node.js 18 or higher
+- npm
 
 ### Backend
 
@@ -51,181 +131,90 @@ npm install
 npm run dev
 ```
 
-Backend will be available at `http://localhost:5000`
+Default URL:
 
-## 🚀 Production Build
+```text
+http://localhost:5000
+```
 
 ### Frontend
+
+```bash
+cd portfolio-app
+npm install
+npm start
+```
+
+Default URL:
+
+```text
+http://localhost:3000
+```
+
+To override the API URL during local development:
+
+```bash
+REACT_APP_API_URL=http://127.0.0.1:5051 npm start
+```
+
+## Environment Variables
+
+### Backend
+
+Use `backend/.env.example` as reference.
+
+```env
+PORT=5000
+GITHUB_USERNAME=Kiwada
+GITHUB_TOKEN=
+CONTACT_TO_EMAIL=kaiocfontenele@gmail.com
+CORS_ORIGIN=https://kaiofontenele.pro,https://www.kaiofontenele.pro
+EMAIL_USER=
+EMAIL_PASS=
+```
+
+### Frontend
+
+Use `portfolio-app/.env.example` as reference.
+
+```env
+REACT_APP_API_URL=https://api.kaiofontenele.pro
+```
+
+## Production Build
+
+### Frontend
+
 ```bash
 cd portfolio-app
 npm run build
 ```
 
-Production files will be in the `build/` folder
+### Backend
 
-## 📁 Project Structure
+The backend does not require a compile step and runs directly with:
 
-```
-Portfolio/
-├── portfolio-app/          # React Frontend
-│   ├── public/
-│   └── src/
-│       ├── components/     # React Components
-│       ├── contexts/       # Context API
-│       ├── i18n.ts        # Language configuration
-│       ├── App.tsx
-│       └── index.tsx
-│
-└── backend/               # Node.js Backend
-    ├── server.js         # Express Server
-    └── package.json
+```bash
+node server.js
 ```
 
-## 🌐 Free Deployment
+## Deployment
 
-### Option 1: Vercel (Recommended)
+This repository is prepared for deployment on self-hosted Coolify with two separate applications:
 
-#### Frontend:
-1. Create an account at [vercel.com](https://vercel.com)
-2. Install CLI: `npm i -g vercel`
-3. In the `portfolio-app` directory:
-   ```bash
-   vercel
-   ```
-4. Follow the terminal instructions
+- frontend served at `https://kaiofontenele.pro`
+- backend served at `https://api.kaiofontenele.pro`
 
-#### Backend:
-1. In the `backend` directory:
-   ```bash
-   vercel
-   ```
-2. Configure environment variables in the Vercel dashboard
+Recommended production setup:
 
-### Option 2: Netlify (Frontend) + Render (Backend)
+- frontend resource using `portfolio-app/Dockerfile`
+- backend resource using `backend/Dockerfile`
+- DNS pointing both root domain and `api` subdomain to the VPS IP
 
-#### Frontend on Netlify:
-1. Create an account at [netlify.com](https://netlify.com)
-2. Connect your GitHub repository
-3. Configure:
-   - Build command: `npm run build`
-   - Publish directory: `build`
+## Author
 
-#### Backend on Render:
-1. Create an account at [render.com](https://render.com)
-2. Create a new "Web Service"
-3. Connect your repository
-4. Configure:
-   - Build command: `npm install`
-   - Start command: `npm start`
+**Kaio Fontenele**
 
-### Option 3: GitHub Pages (Static Frontend Only)
-
-1. In the frontend `package.json`, add:
-   ```json
-   "homepage": "https://your-username.github.io/your-repo"
-   ```
-
-2. Install gh-pages:
-   ```bash
-   npm install --save-dev gh-pages
-   ```
-
-3. Add scripts in `package.json`:
-   ```json
-   "predeploy": "npm run build",
-   "deploy": "gh-pages -d build"
-   ```
-
-4. Run:
-   ```bash
-   npm run deploy
-   ```
-
-### Option 4: Railway (Frontend + Backend)
-
-1. Create an account at [railway.app](https://railway.app)
-2. Connect your GitHub repository
-3. Railway will automatically detect Node.js
-4. Configure environment variables
-
-## 🔧 Configuration
-
-### Environment Variables (Backend)
-
-Create a `.env` file in the `backend` folder:
-
-```env
-PORT=5000
-```
-
-### Update Backend URL (Frontend)
-
-In `src/components/Projects.tsx` and `src/components/Contact.tsx`, update the API URL:
-
-```typescript
-// Development
-const response = await axios.get('http://localhost:5000/api/github/repos');
-
-// Production (after backend deployment)
-const response = await axios.get('https://your-backend.vercel.app/api/github/repos');
-```
-
-## 📱 Main Features
-
-### 1. Theme System
-- Toggle between light and dark mode
-- Preference saved in localStorage
-- Smooth transitions between themes
-
-### 2. Internationalization
-- Switch between Portuguese and English
-- Complete interface translations
-- Automatic browser language detection
-
-### 3. GitHub Integration
-- Automatic repository display
-- Profile statistics
-- Direct links to projects
-
-### 4. Animations
-- Scroll animations with Framer Motion
-- Smooth transitions between sections
-- Interactive hover effects
-
-## 🎨 Customization
-
-### Colors
-Edit CSS variables in `src/index.css`:
-
-```css
-:root {
-  --primary-color: #6366f1;
-  --primary-hover: #4f46e5;
-  /* ... other colors */
-}
-```
-
-### Content
-Update translations in `src/i18n.ts` to customize texts.
-
-### Projects
-Projects are automatically loaded from GitHub. To highlight specific projects, edit `src/components/Projects.tsx`.
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 👤 Author
-
-**Guilherme Mendes**
-- GitHub: [@Guiilhermendes](https://github.com/Guiilhermendes)
-- LinkedIn: [guilhermemnds](https://www.linkedin.com/in/guilhermemnds/)
-- Email: guilhermemendeds@gmail.com
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
----
-
-⭐ If this project helped you, consider giving it a star!
+- GitHub: [Kiwada](https://github.com/Kiwada)
+- LinkedIn: [kaio-fontenele-139a151b1](https://www.linkedin.com/in/kaio-fontenele-139a151b1/)
+- Email: [kaiocfontenele@gmail.com](mailto:kaiocfontenele@gmail.com)
