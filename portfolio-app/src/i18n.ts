@@ -24,7 +24,7 @@ const resources = {
       about: {
         title: 'About Me',
         description:
-          'Developer based in Parnaíba, Piauí, Brazil, with 3 years of experience building scalable systems, focused on applied artificial intelligence and process automation. I work across the full product lifecycle, integrating LLMs, APIs, and modern architectures designed for performance and reliability. My approach is centered on operational efficiency, reducing friction, increasing productivity, and delivering measurable business value through resilient cloud-ready systems.',
+          'Full Stack Developer born in São Luís, Maranhão, Brazil, with 3 years of experience building scalable systems focused on applied artificial intelligence and process automation. I work across the full product lifecycle, integrating LLMs, APIs, and modern architectures designed for performance and reliability. My approach is centered on operational efficiency, reducing friction, increasing productivity, and delivering measurable business value through resilient cloud-ready systems.',
         yearsExperience: 'Years Experience',
         appliedAi: 'Applied AI',
         cloudOps: 'Cloud & DevOps'
@@ -139,7 +139,7 @@ const resources = {
       about: {
         title: 'Sobre Mim',
         description:
-          'Desenvolvedor baseado em Parnaíba, Piauí, Brasil, com 3 anos de experiência na construção de sistemas escaláveis, com foco em inteligência artificial aplicada e automação de processos. Atuação no desenvolvimento completo de aplicações, integrando LLMs, APIs e arquiteturas modernas orientadas a performance e confiabilidade. Forte direcionamento à eficiência operacional, com soluções que reduzem fricção, aumentam produtividade e geram valor mensurável para o negócio em ambientes cloud prontos para produção.',
+          'Desenvolvedor Full Stack nascido em São Luís, Maranhão, Brasil, com 3 anos de experiência na construção de sistemas escaláveis, com foco em inteligência artificial aplicada e automação de processos. Atuo no desenvolvimento completo de aplicações, integrando LLMs, APIs e arquiteturas modernas orientadas a desempenho e confiabilidade. Tenho forte direcionamento à eficiência operacional, com soluções que reduzem fricção, aumentam produtividade e geram valor mensurável para o negócio em ambientes de nuvem prontos para produção.',
         yearsExperience: 'Anos de Experiência',
         appliedAi: 'IA Aplicada',
         cloudOps: 'Nuvem e DevOps'

@@ -22,10 +22,6 @@ npm run dev
 
 ## Deployment
 
-This backend can be easily deployed on:
-- Vercel
-- Render
-- Railway
-- Heroku
+This backend is intended to be deployed with Docker, either locally or through Coolify.
 
 Make sure to configure the necessary environment variables.
