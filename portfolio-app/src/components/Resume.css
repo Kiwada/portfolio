@@ -36,6 +36,7 @@
   border-radius: 20px;
   padding: 40px 30px;
   color: var(--text-color);
+  text-decoration: none;
   border: 2px solid var(--border-color);
   transition: all 0.3s ease;
   cursor: pointer;
@@ -49,6 +50,17 @@
 .resume-card:hover {
   border-color: var(--primary-color);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.resume-card:hover .resume-language,
+.resume-card:hover .resume-label,
+.resume-card:focus-visible .resume-language,
+.resume-card:focus-visible .resume-label,
+.resume-card:active .resume-language,
+.resume-card:active .resume-label {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
 }
 
 .resume-card-disabled {

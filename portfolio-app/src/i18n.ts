@@ -87,10 +87,11 @@ const resources = {
       },
       resume: {
         title: 'Resume',
-        subtitle: 'The download is temporarily disabled while the documents are being updated.',
+        subtitle: 'Portuguese and English versions are available for download.',
         download: 'Download PDF',
         disabled: 'Download unavailable',
-        portuguese: 'Portuguese Version'
+        portuguese: 'Portuguese Version',
+        english: 'English Version'
       },
       contact: {
         title: 'Get In Touch',
@@ -194,10 +195,11 @@ const resources = {
       },
       resume: {
         title: 'Currículo',
-        subtitle: 'O download está temporariamente desativado enquanto os documentos são atualizados.',
+        subtitle: 'As versões em português e inglês estão disponíveis para download.',
         download: 'Baixar PDF',
         disabled: 'Download indisponível',
-        portuguese: 'Versão em Português'
+        portuguese: 'Versão em Português',
+        english: 'Versão em Inglês'
       },
       contact: {
         title: 'Entre em Contato',
