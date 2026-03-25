@@ -19,7 +19,7 @@ const githubHeaders = {
   ...(GITHUB_TOKEN ? { Authorization: `Bearer ${GITHUB_TOKEN}` } : {})
 };
 
-// Middleware
+
 app.use(
   cors({
     origin(origin, callback) {
@@ -39,7 +39,7 @@ app.get('/api/health', (_req, res) => {
   res.json({ ok: true, service: 'portfolio-backend' });
 });
 
-// GitHub API Route
+
 app.get('/api/github/repos', async (req, res) => {
   try {
     const response = await axios.get(`https://api.github.com/users/${GITHUB_USERNAME}/repos`, {
@@ -49,7 +49,7 @@ app.get('/api/github/repos', async (req, res) => {
       },
       headers: githubHeaders
     });
-    
+
     const repos = response.data.map(repo => ({
       id: repo.id,
       name: repo.name,
@@ -61,7 +61,7 @@ app.get('/api/github/repos', async (req, res) => {
       updated_at: repo.updated_at,
       topics: repo.topics
     }));
-    
+
     res.json(repos);
   } catch (error) {
     console.error('Error fetching GitHub repos:', error);
@@ -75,7 +75,7 @@ app.get('/api/github/stats', async (req, res) => {
     const response = await axios.get(`https://api.github.com/users/${GITHUB_USERNAME}`, {
       headers: githubHeaders
     });
-    
+
     const stats = {
       public_repos: response.data.public_repos,
       followers: response.data.followers,
@@ -85,7 +85,7 @@ app.get('/api/github/stats', async (req, res) => {
       avatar_url: response.data.avatar_url,
       name: response.data.name
     };
-    
+
     res.json(stats);
   } catch (error) {
     console.error('Error fetching GitHub stats:', error);
@@ -93,7 +93,7 @@ app.get('/api/github/stats', async (req, res) => {
   }
 });
 
-// Contact Form Route
+
 app.post('/api/contact', async (req, res) => {
   try {
     const { name, email, message } = req.body;
@@ -101,7 +101,7 @@ app.post('/api/contact', async (req, res) => {
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
       return res.status(503).json({ error: 'Email service is not configured' });
     }
-    
+
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -125,9 +125,9 @@ app.post('/api/contact', async (req, res) => {
     };
 
     await transporter.sendMail(mailOptions);
-    
+
     console.log('Contact form submission sent to email:', { name, email });
-    
+
     res.json({ success: true, message: 'Message received successfully' });
   } catch (error) {
     console.error('Error processing contact form:', error);

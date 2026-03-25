@@ -21,8 +21,8 @@ export const featuredProjects: FeaturedProject[] = [
       en: 'Concierge'
     },
     description: {
-      pt: 'Plataforma SaaS para turismo com agente de inteligência artificial orientado ao atendimento, recomendações contextualizadas e orquestração de experiências assistidas.',
-      en: 'Tourism SaaS platform with an artificial intelligence agent focused on support, contextual recommendations, and orchestration of assisted experiences.'
+      pt: 'Plataforma SaaS com IA para turismo, estruturada para atendimento assistido, recomendações contextualizadas e integração de serviços voltados a experiências personalizadas.',
+      en: 'AI-powered SaaS platform for tourism, structured for assisted support, contextual recommendations, and service integration for personalized experiences.'
     },
     repositoryUrl: 'https://github.com/Kiwada/Concierge',
     stack: ['React', 'TypeScript', 'Supabase', 'OpenAI', 'Docker'],
@@ -35,11 +35,11 @@ export const featuredProjects: FeaturedProject[] = [
     id: 'project-02',
     name: {
       pt: 'API Express Mongo',
-      en: 'Express Mongo API'
+      en: 'API Express Mongo'
     },
     description: {
-      pt: 'API REST desenvolvida com Express e MongoDB, com foco em organização de rotas, modelagem de dados, persistência e estruturação de serviços de backend.',
-      en: 'REST API built with Express and MongoDB, focused on route organization, data modeling, persistence, and backend service structuring.'
+      pt: 'API REST com Node.js e MongoDB, organizada em rotas, persistência e camada de serviços para operações de CRUD e manutenção evolutiva.',
+      en: 'REST API with Node.js and MongoDB, organized into routes, persistence, and a service layer for CRUD operations and long-term maintainability.'
     },
     repositoryUrl: 'https://github.com/Kiwada/learning-path-js-ts/tree/main/Api-Express-Mongo',
     stack: ['Node.js', 'Express', 'MongoDB', 'JavaScript'],
@@ -55,11 +55,11 @@ export const featuredProjects: FeaturedProject[] = [
       en: 'Socket.IO Docs'
     },
     description: {
-      pt: 'Implementação de comunicação em tempo real com Socket.IO, estruturando eventos, sincronização bidirecional e gerenciamento de conexões entre cliente e servidor.',
-      en: 'Real-time communication implementation with Socket.IO, structuring events, bidirectional synchronization, and connection management between client and server.'
+      pt: 'Aplicação full stack de edição colaborativa de documentos em tempo real, com sincronização instantânea entre clientes e persistência em banco de dados.',
+      en: 'Full stack real-time collaborative document editor with instant synchronization between clients and database persistence.'
     },
     repositoryUrl: 'https://github.com/Kiwada/learning-path-js-ts/tree/main/socket.io-docs',
-    stack: ['Node.js', 'Socket.IO', 'JavaScript'],
+    stack: ['Node.js', 'Express', 'Socket.IO', 'MongoDB'],
     status: {
       pt: 'Destaque',
       en: 'Featured'

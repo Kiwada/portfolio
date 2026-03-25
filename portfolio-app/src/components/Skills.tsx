@@ -25,7 +25,9 @@ const Skills: React.FC = () => {
         { name: 'JavaScript', icon: <FaJs />, color: '#F7DF1E' },
         { name: 'HTML5', icon: <FaHtml5 />, color: '#E34F26' },
         { name: 'CSS3', icon: <FaCss3Alt />, color: '#1572B6' },
-        { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: '#06B6D4' }
+        { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: '#06B6D4' },
+        { name: 'SEO', icon: <FaHtml5 />, color: '#F97316' },
+        { name: 'Web Performance', icon: <FaReact />, color: '#22C55E' }
       ]
     },
     {
@@ -35,13 +37,13 @@ const Skills: React.FC = () => {
         { name: 'Express', icon: <FaNodeJs />, color: '#000000' },
         { name: 'NestJS', icon: <SiNestjs />, color: '#E0234E' },
         { name: 'Fastify', icon: <SiFastify />, color: '#000000' },
+        { name: 'Socket.IO', icon: <FaNodeJs />, color: '#111827' },
         { name: 'MongoDB', icon: <SiMongodb />, color: '#47A248' },
         { name: 'PostgreSQL', icon: <SiPostgresql />, color: '#4169E1' },
-        { name: 'NoSQL', icon: <FaDatabase />, color: '#4DB33D' },
         { name: 'Redis', icon: <SiRedis />, color: '#DC382D' },
-        { name: 'Axios', icon: <SiAxios />, color: '#5A29E4' },
+        { name: 'Supabase', icon: <FaDatabase />, color: '#3ECF8E' },
         { name: 'SQL', icon: <FaDatabase />, color: '#4479A1' },
-        { name: 'API REST', icon: <FaNodeJs />, color: '#009688' }
+        { name: 'REST APIs', icon: <SiAxios />, color: '#5A29E4' }
       ]
     },
     {
@@ -50,9 +52,11 @@ const Skills: React.FC = () => {
         { name: 'Git', icon: <FaGitAlt />, color: '#F05032' },
         { name: 'Docker', icon: <FaDocker />, color: '#2496ED' },
         { name: 'Coolify', icon: <FaDocker />, color: '#2496ED' },
-        { name: 'Supabase', icon: <FaDatabase />, color: '#3ECF8E' },
         { name: 'AWS', icon: <FaDatabase />, color: '#FF9900' },
         { name: 'GitHub Actions', icon: <FaGithub />, color: '#24292F' },
+        { name: 'CI/CD', icon: <FaGithub />, color: '#2563EB' },
+        { name: 'Code Review', icon: <FaGithub />, color: '#6B7280' },
+        { name: 'Clean Code', icon: <FaGitAlt />, color: '#14B8A6' },
         { name: 'n8n', icon: <FaNodeJs />, color: '#EA4B71' }
       ]
     }

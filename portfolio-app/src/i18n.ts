@@ -16,18 +16,18 @@ const resources = {
       },
       hero: {
         greeting: "Hi, I'm",
-        title: 'Software Engineer',
-        subtitle: 'Building intelligent solutions with AI, automation, and cloud',
+        title: 'Full Stack Developer',
+        subtitle: 'React, Next.js, Node.js, and TypeScript for reliable web delivery',
         cta: 'View Projects',
         contact: 'Get in Touch'
       },
       about: {
         title: 'About Me',
         description:
-          'Full Stack Developer born in São Luís, Maranhão, Brazil, with 3 years of experience building scalable systems focused on applied artificial intelligence and process automation. I work across the full product lifecycle, integrating LLMs, APIs, and modern architectures designed for performance and reliability. My approach is centered on operational efficiency, reducing friction, increasing productivity, and delivering measurable business value through resilient cloud-ready systems.',
+          'Full Stack Developer with 3 years of experience building web applications, APIs, and integrations focused on automation and operational efficiency. I work with React and Next.js on the frontend, Node.js on the backend, and relational and NoSQL databases in the data layer, prioritizing organized code, user experience, and reliable delivery.',
         yearsExperience: 'Years Experience',
-        appliedAi: 'Applied AI',
-        cloudOps: 'Cloud & DevOps'
+        appliedAi: 'APIs & Integrations',
+        cloudOps: 'Reliable Delivery'
       },
       skills: {
         title: 'Skills & Technologies',
@@ -46,28 +46,20 @@ const resources = {
         title: 'Professional Experience',
         experiences: [
           {
-            company: 'Workana',
-            role: 'Freelance DevOps Engineer',
-            period: ' Jan 2023 - Present',
+            company: 'Centro Educacional Contexto',
+            role: 'IT Professional | Full Stack Development',
+            period: 'Sep 2025 - Present',
             description:
-              'Delivered freelance DevOps services for client projects, configuring containerized environments, deployment flows, cloud infrastructure, and operational routines focused on reliability and maintainability. Worked on application publishing, environment setup, automation pipelines, and infrastructure organization for faster and safer delivery cycles.',
-            technologies: ['Docker', 'Coolify', 'AWS', 'GitHub Actions', 'Supabase', 'n8n']
+              'Developed internal solutions focused on web applications, process automation, and system integration, connecting APIs, databases, and operational flows used by teachers, internal teams, and print operations. Built a CLI for DOCX processing and contributed to AI-driven workflows with OpenAI, WhatsApp, n8n, and cloud services, with emphasis on reliability and maintainability.',
+            technologies: ['React', 'Node.js', 'TypeScript', 'OpenAI', 'n8n', 'Docker', 'DOCX']
           },
           {
             company: 'Centro Educacional Contexto',
-            role: 'IT professional',
-            period: 'Jan 2026 - Present',
+            role: 'Web Development Intern',
+            period: 'Mar 2024 - Aug 2025',
             description:
-              'Worked on the development and evolution of technology solutions focused on process automation, systems integration, and operational efficiency. Contributed to application development, API integrations, and implementation of solutions designed for performance, scalability, and measurable business value.',
-            technologies: ['React', 'Node.js', 'TypeScript', 'Python', 'APIs', 'Automation', 'Cloud']
-          },
-          {
-            company: 'Centro Educacional Contexto',
-            role: 'Intern',
-            period: 'Mar 2024 - Dec 2025',
-            description:
-              'Provided support and help desk assistance, helping users in their day-to-day routines, resolving demands, and improving the experience with internal tools and services. Also contributed to UI/UX design activities, with attention to usability, clarity, and more intuitive interactions.',
-            technologies: ['Help Desk', 'User Support', 'UI/UX Design', 'Customer Service', 'Problem Solving']
+              'Developed and maintained the institutional portal with React, Next.js, TypeScript, HTML, CSS, and Tailwind CSS, focusing on responsiveness, usability, web performance, and technical SEO. Implemented forms integrated with REST APIs and internal flows, while collaborating on code maintenance, versioning, and technical review.',
+            technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'REST APIs', 'SEO']
           }
         ]
       },
@@ -131,18 +123,18 @@ const resources = {
       },
       hero: {
         greeting: 'Olá, eu sou',
-        title: 'Engenheiro de Software',
-        subtitle: 'Construindo soluções inteligentes com IA, automação e infraestrutura em nuvem',
+        title: 'Desenvolvedor Full Stack',
+        subtitle: 'React, Next.js, Node.js e TypeScript para entregas web confiáveis',
         cta: 'Ver Projetos',
         contact: 'Entre em Contato'
       },
       about: {
         title: 'Sobre Mim',
         description:
-          'Desenvolvedor Full Stack nascido em São Luís, Maranhão, Brasil, com 3 anos de experiência na construção de sistemas escaláveis, com foco em inteligência artificial aplicada e automação de processos. Atuo no desenvolvimento completo de aplicações, integrando LLMs, APIs e arquiteturas modernas orientadas a desempenho e confiabilidade. Tenho forte direcionamento à eficiência operacional, com soluções que reduzem fricção, aumentam produtividade e geram valor mensurável para o negócio em ambientes de nuvem prontos para produção.',
+          'Desenvolvedor Full Stack com 3 anos de experiência na construção de aplicações web, APIs e integrações voltadas à automação e eficiência operacional. Atuo com React e Next.js no frontend, Node.js no backend e bancos relacionais e NoSQL na camada de dados, com foco em código organizado, experiência do usuário e entregas confiáveis.',
         yearsExperience: 'Anos de Experiência',
-        appliedAi: 'IA Aplicada',
-        cloudOps: 'Nuvem e DevOps'
+        appliedAi: 'APIs & Integrações',
+        cloudOps: 'Entregas Confiáveis'
       },
       skills: {
         title: 'Habilidades & Tecnologias',
@@ -161,28 +153,20 @@ const resources = {
         title: 'Experiência Profissional',
         experiences: [
           {
-            company: 'Workana',
-            role: 'Engenheiro DevOps Freelancer',
-            period: 'Jan 2023 - Atual',
+            company: 'Centro Educacional Contexto',
+            role: 'Profissional de TI | Desenvolvimento Full Stack',
+            period: 'Set 2025 - Atual',
             description:
-              'Prestação de serviços freelance de DevOps para projetos de clientes, com configuração de ambientes conteinerizados, fluxos de deploy, infraestrutura em nuvem e rotinas operacionais voltadas à confiabilidade e à manutenção. Atuação na publicação de aplicações, configuração de ambientes, pipelines de automação e organização da infraestrutura para ciclos de entrega mais rápidos e seguros.',
-            technologies: ['Docker', 'Coolify', 'AWS', 'GitHub Actions', 'Supabase', 'n8n']
+              'Desenvolvo soluções internas com foco em aplicações web, automação de processos e integração entre sistemas, conectando APIs, banco de dados e fluxos operacionais utilizados por professores, equipe interna e gráfica. Também implementei uma CLI para processamento de arquivos DOCX e participei de soluções com IA integrando OpenAI, WhatsApp, n8n e serviços em nuvem.',
+            technologies: ['React', 'Node.js', 'TypeScript', 'OpenAI', 'n8n', 'Docker', 'DOCX']
           },
           {
             company: 'Centro Educacional Contexto',
-            role: 'Profissional de TI',
-            period: 'Jan 2026 - Atual',
+            role: 'Estagiário de Desenvolvimento Web',
+            period: 'Mar 2024 - Ago 2025',
             description:
-              'Atuação no desenvolvimento e evolução de soluções tecnológicas, com foco em automação de processos, integração de sistemas e eficiência operacional. Participação na construção de aplicações, integrações com APIs e implementação de soluções orientadas a desempenho, escalabilidade e geração de valor para o negócio.',
-            technologies: ['React', 'Node.js', 'TypeScript', 'Python', 'APIs', 'Automação', 'Cloud']
-          },
-          {
-            company: 'Centro Educacional Contexto',
-            role: 'Estagiário',
-            period: 'Mar 2024 - Dez 2025',
-            description:
-              'Atuação com suporte e help desk, auxiliando usuários nas rotinas do dia a dia, resolvendo demandas e melhorando a experiência com ferramentas e serviços internos. Também houve participação em atividades de UI/UX design, com foco em usabilidade, clareza e interações mais intuitivas.',
-            technologies: ['Help Desk', 'Suporte ao Usuário', 'UI/UX Design', 'Atendimento', 'Resolução de Problemas']
+              'Desenvolvi e mantive o portal institucional com React, Next.js, TypeScript, HTML, CSS e Tailwind CSS, com foco em responsividade, usabilidade, performance web e SEO técnico. Também implementei formulários integrados a APIs REST e fluxos internos, colaborando com manutenção de código, versionamento e revisão técnica.',
+            technologies: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'APIs REST', 'SEO']
           }
         ]
       },

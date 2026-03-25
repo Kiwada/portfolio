@@ -52,7 +52,7 @@ const Education: React.FC = () => {
     },
     {
       title: t('education.degrees.techDegree.title'),
-      institution: 'IFMA - São Luiz',
+      institution: 'IFMA - São Luis',
       period: '2019 - 2021',
       description: t('education.degrees.techDegree.description')
     },

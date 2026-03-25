@@ -32,53 +32,53 @@ const Projects: React.FC = () => {
               transition={{ delay: index * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
-              >
-                <div className="project-header">
-                  <FaGithub className="project-icon" />
-                  {project.status ? (
-                    <span className="project-status">{project.status[locale]}</span>
-                  ) : null}
-                </div>
+            >
+              <div className="project-header">
+                <FaGithub className="project-icon" />
+                {project.status ? (
+                  <span className="project-status">{project.status[locale]}</span>
+                ) : null}
+              </div>
 
-                <h3 className="project-name">{project.name[locale]}</h3>
-                <p className="project-description">{project.description[locale]}</p>
+              <h3 className="project-name">{project.name[locale]}</h3>
+              <p className="project-description">{project.description[locale]}</p>
 
-                <div className="project-topics">
-                  {project.stack.map((item) => (
-                    <span key={item} className="topic-tag">{item}</span>
-                  ))}
-                </div>
+              <div className="project-topics">
+                {project.stack.map((item) => (
+                  <span key={item} className="topic-tag">{item}</span>
+                ))}
+              </div>
 
-                <div className="project-footer">
-                  {project.repositoryUrl ? (
-                    <a
-                      href={project.repositoryUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link"
-                    >
-                      <FaGithub />
-                      {t('projects.viewCode')}
-                    </a>
-                  ) : (
-                    <span className="project-link project-link-disabled">
-                      <FaGithub />
-                      {t('projects.comingSoon')}
-                    </span>
-                  )}
+              <div className="project-footer">
+                {project.repositoryUrl ? (
+                  <a
+                    href={project.repositoryUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
+                    <FaGithub />
+                    {t('projects.viewCode')}
+                  </a>
+                ) : (
+                  <span className="project-link project-link-disabled">
+                    <FaGithub />
+                    {t('projects.comingSoon')}
+                  </span>
+                )}
 
-                  {project.liveUrl ? (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-link"
-                    >
-                      <FaGithub />
-                      {t('projects.liveDemo')}
-                    </a>
-                  ) : null}
-                </div>
+                {project.liveUrl ? (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
+                    <FaGithub />
+                    {t('projects.liveDemo')}
+                  </a>
+                ) : null}
+              </div>
             </motion.div>
           ))}
         </div>
@@ -91,7 +91,7 @@ const Projects: React.FC = () => {
           viewport={{ once: true }}
         >
           <a
-            href="https://github.com/Kiwada?tab=repositories" 
+            href="https://github.com/Kiwada?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-outline"
